@@ -1,0 +1,79 @@
+
+  <h1>Listado de tareas</h1>
+  
+  <div class="example-container mat-elevation-z8">
+    
+  
+    <div class="example-table-container">
+  
+      <table mat-table [dataSource]="dataSource" class="example-table"
+             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+        <!-- Number Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>#</th>
+          <td mat-cell *matCellDef="let task">{{task.id}}</td>
+        </ng-container>
+  
+        <!-- Title Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef>DESCRIPCION</th>
+          <td mat-cell *matCellDef="let task">{{task.descripcion}}</td>
+        </ng-container>
+  
+        <!-- State Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>NOMBRE</th>
+          <td mat-cell *matCellDef="let task">{{task.nombre}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="fechaHoraFinalizacion">
+          <th mat-header-cell *matHeaderCellDef>Fecha Finalización</th>
+          <td mat-cell *matCellDef="let task">
+            <!-- Verificar si fechaHoraFinalizacion está definida -->
+            <ng-container *ngIf="task.fechaHoraFinalizacion; else showButton">
+              <!-- Si tiene valor, mostramos 'completa' -->
+              completa
+            </ng-container>
+        
+            <ng-template #showButton>
+              <!-- Si es null, mostramos el botón con el chulito -->
+              <button mat-icon-button color="primary" (click)="markAsComplete(task)">
+                <mat-icon>check</mat-icon>
+              </button>
+            </ng-template>
+          </td>
+        </ng-container>
+        
+
+         <!-- Botones Column (Eliminar) -->
+      <ng-container matColumnDef="Eliminar">
+        <th mat-header-cell *matHeaderCellDef>Opciones</th>
+        <td mat-cell *matCellDef="let task">
+          <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+        <!-- Created Column -->
+        <ng-container matColumnDef="created">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+            Created
+          </th>
+          <td mat-cell >Create</td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let task; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  
+    <mat-paginator 
+    [pageSizeOptions]="[5,10,25,100]"
+    showFirstLastButtons
+    aria-label="Select page of products"
+    ></mat-paginator>
+  </div>
+  
+  
+  
