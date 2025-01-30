@@ -1,5 +1,5 @@
 
-<p align="center"> <img src="https://github.com/user-attachments/assets/e1b2723d-57c2-4185-8cac-d189cc316f15" width="700"> </p>
+<p align="center"> <img src="" width="700"> </p>
 
 # FronCrudTarea
 
