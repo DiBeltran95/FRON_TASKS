@@ -1,6 +1,5 @@
 
-![Image](https://github.com/user-attachments/assets/d87f5f6c-5a7b-40e7-897b-2134868ca346)
-
+<p align="center"> <img src="https://github.com/DiBeltran95/CrudLaravel/assets/31999241/bb174f32-0d6e-4e35-987c-113fe94148c8](https://github.com/user-attachments/assets/d87f5f6c-5a7b-40e7-897b-2134868ca346" width="700"> </p>
 
 # FronCrudTarea
 
